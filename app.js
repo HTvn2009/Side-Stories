@@ -158,6 +158,21 @@ document.querySelectorAll('.read-button').forEach((button) => {
   });
 });
 
+document.querySelectorAll('.story-orb').forEach((orb) => {
+  const episode = (window.EPISODE_CONTENT || []).find((item) => item.number === Number(orb.dataset.episode));
+  const firstImage = episode?.blocks.find((block) => block.type === 'image');
+  const image = orb.querySelector('img');
+
+  if (episode && firstImage) {
+    image.src = firstImage.src;
+    image.alt = '';
+    orb.title = episode.title;
+    orb.setAttribute('aria-label', 'Open episode ' + episode.number + ': ' + episode.title);
+  }
+
+  orb.addEventListener('click', () => showEpisode(Number(orb.dataset.episode)));
+});
+
 document.querySelector('.back-button').addEventListener('click', () => showEpisodeList());
 
 [previousEpisodeButton, nextEpisodeButton].forEach((button) => {
