@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Side Stories — a personal blog about ideas, craft, and the stories behind the work.">
+  <title>Side Stories — Field Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#mainmenu" aria-label="Side Stories home">
+      <span class="brand-mark">SS</span>
+      <span>Side Stories</span>
+    </a>
+
+    <nav class="tabs" aria-label="Main navigation" role="tablist">
+      <button class="tab is-active" id="tab-mainmenu" role="tab" aria-selected="true" aria-controls="mainmenu" data-tab="mainmenu">Main menu</button>
+      <button class="tab" id="tab-author" role="tab" aria-selected="false" aria-controls="author" data-tab="author" tabindex="-1">Author</button>
+      <button class="tab" id="tab-episodes" role="tab" aria-selected="false" aria-controls="episodes" data-tab="episodes" tabindex="-1">Episodes</button>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="panel hero is-active" id="mainmenu" role="tabpanel" aria-labelledby="tab-mainmenu">
+      <div class="hero-copy">
+        <h1>Stories behind the<br><em>Stories.</em></h1>
+        <p class="intro">Side Stories is my corner of the internet for small notes about stories behind many novels.</p>
+        <button class="primary-action" data-go="episodes">Explore the episodes</button>
+      </div>
+
+      <div class="dial-wrap" aria-hidden="true">
+        <div class="orbit orbit-one">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="orbit orbit-two"></div>
+        <div class="dial-center"><strong>SS</strong></div>
+      </div>
+    </section>
+
+    <section class="panel author" id="author" role="tabpanel" aria-labelledby="tab-author" hidden>
+      <div class="section-heading">
+        <h2>Hello, I’m <em>Hoang Tung</em></h2>
+      </div>
+      <div class="author-grid">
+        <div class="portrait" aria-label="Abstract author portrait">
+          <span class="portrait-eye eye-one"></span><span class="portrait-eye eye-two"></span>
+          <span class="portrait-smile"></span>
+        </div>
+        <div class="bio">
+          <p class="lead">I’m a writer, designer, and chronic collector of half-formed ideas.</p>
+          <p>I started Side Stories to share the parts of creative work that rarely make it into polished portfolios: false starts, useful questions, and the tiny observations that become something bigger.</p>
+          <p>When I’m away from the screen, you’ll find me taking long walks, annotating books, or trying to make the perfect cup of coffee.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel episodes" id="episodes" role="tabpanel" aria-labelledby="tab-episodes" hidden>
+      <div class="section-heading episodes-heading">
+        <div><h2>Our <em>Episodes.</em></h2></div>
+      </div>
+
+      <div class="episode-list">
+        <article class="episode-card">
+          <div class="episode-number">E. 01</div>
+          <div class="episode-content"><h3>Why Games and Movies Based on Novels Can Expand the Story Without Replacing the Original</h3><p>How thoughtful adaptations add characters, places, and interactive experiences while respecting the worlds that inspired them.</p></div>
+          <button class="read-button" aria-label="Read Why Games and Movies Based on Novels Can Expand the Story Without Replacing the Original">Read</button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 02</div>
+          <div class="episode-content"><h3>Asian Horror Films Inspired by Folklore and Ancient Cultural Beliefs</h3><p>From vengeful spirits to karma and local legends, folklore gives Asian horror its distinct identity and emotional depth.</p></div>
+          <button class="read-button" aria-label="Read Asian Horror Films Inspired by Folklore and Ancient Cultural Beliefs">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 03</div>
+          <div class="episode-content"><h3>Is Fantasy Becoming Oversaturated?</h3><p>More people can publish fantasy than ever before, but familiar plots and crowded platforms make originality harder to find.</p></div>
+          <button class="read-button" aria-label="Read Is Fantasy Becoming Oversaturated?">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 04</div>
+          <div class="episode-content"><h3>Why Everyone Should Read Classic Fantasy</h3><p>Classic fantasy offers enduring lessons in imagination, courage, morality, and the art of building unforgettable worlds.</p></div>
+          <button class="read-button" aria-label="Read Why Everyone Should Read Classic Fantasy">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 05</div>
+          <div class="episode-content"><h3>World Building Inspired by Culture Around the World</h3><p>How creators transform history, mythology, architecture, and social traditions into fictional worlds that feel alive.</p></div>
+          <button class="read-button" aria-label="Read World Building Inspired by Culture Around the World">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 06</div>
+          <div class="episode-content"><h3>The Balance Between Realism and Fantasy in Fiction</h3><p>Why convincing rules, human emotions, and believable consequences help even the most magical stories feel real.</p></div>
+          <button class="read-button" aria-label="Read The Balance Between Realism and Fantasy in Fiction">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 07</div>
+          <div class="episode-content"><h3>Copyright Law and the Creative Ecosystem</h3><p>Protecting authors also supports editors, translators, publishers, artists, and the wider network behind every creative work.</p></div>
+          <button class="read-button" aria-label="Read Copyright Law and the Creative Ecosystem">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 08</div>
+          <div class="episode-content"><h3>Copyright Law as a Foundation for a Healthier Creative Market</h3><p>Clear rights and fair licensing create the confidence needed to invest in new ideas, creators, and cultural industries.</p></div>
+          <button class="read-button" aria-label="Read Copyright Law as a Foundation for a Healthier Creative Market">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 09</div>
+          <div class="episode-content"><h3>Why Copyright Protection Also Protects the Audience</h3><p>Copyright helps audiences receive safer, reliable, and higher-quality editions while supporting more creative choice.</p></div>
+          <button class="read-button" aria-label="Read Why Copyright Protection Also Protects the Audience">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 10</div>
+          <div class="episode-content"><h3>How Illegal Copies Can Put Licensed Series at Risk</h3><p>Piracy can weaken sales, disrupt licensing decisions, and leave officially translated series unfinished for their readers.</p></div>
+          <button class="read-button" aria-label="Read How Illegal Copies Can Put Licensed Series at Risk">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 11</div>
+          <div class="episode-content"><h3>Cybersecurity and Copyright</h3><p>Why piracy sites, cracked software, malicious advertising, phishing, and data theft make copyright infringement a security problem too.</p></div>
+          <button class="read-button" aria-label="Read Cybersecurity and Copyright">Read </button>
+        </article>
+        <article class="episode-card">
+          <div class="episode-number">E. 12</div>
+          <div class="episode-content"><h3>How Cyber Police Track Online Pirates</h3><p>Digital evidence, financial trails, international cooperation, and physical investigations reveal the people behind piracy networks.</p></div>
+          <button class="read-button" aria-label="Read How Cyber Police Track Online Pirates">Read </button>
+        </article>
+      </div>
+
+      <div class="article-view" hidden>
+        <button class="back-button" type="button">Back to all episodes</button>
+        <article class="article-shell">
+          <header class="article-header">
+            <p class="eyebrow article-kicker"></p>
+            <h1 class="article-title"></h1>
+          </header>
+          <div class="article-body"></div>
+          <nav class="episode-navigation" aria-label="Episode navigation">
+            <button class="episode-nav-button previous-episode" type="button">
+              <span><strong>Previous</strong><strong class="previous-episode-title"></strong></span>
+            </button>
+            <button class="episode-nav-button next-episode" type="button">
+              <span><strong>Next</strong><strong class="next-episode-title"></strong></span>
+            </button>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="episode-content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
