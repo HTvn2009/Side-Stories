@@ -20,8 +20,8 @@
 
     <nav class="tabs" aria-label="Main navigation" role="tablist">
       <button class="tab is-active" id="tab-mainmenu" role="tab" aria-selected="true" aria-controls="mainmenu" data-tab="mainmenu">Main menu</button>
-      <button class="tab" id="tab-author" role="tab" aria-selected="false" aria-controls="author" data-tab="author" tabindex="-1">Author</button>
       <button class="tab" id="tab-episodes" role="tab" aria-selected="false" aria-controls="episodes" data-tab="episodes" tabindex="-1">Episodes</button>
+      <button class="tab" id="tab-author" role="tab" aria-selected="false" aria-controls="author" data-tab="author" tabindex="-1">Author</button>
     </nav>
 
   </header>
@@ -39,26 +39,29 @@ The focus is not only on well-known names or mainstream works. Side Stories is a
 Think of this as a collection of notes, observations, and discoveries. Some entries may be about the making of a project, while others may wander into the ideas, influences, places, people, or seemingly unrelated details that give a work its character. Together, they form a different way of looking at art: not just through what we see, but through the stories and thoughts that exist around it.
 
 Side Stories is ultimately about curiosity—the belief that every creative work has more than one story to tell, and that sometimes the most interesting ones are found just outside the frame.</p>
-        <button class="primary-action" data-go="episodes">Explore the episodes</button>
+        
       </div>
 
       <div class="dial-wrap" aria-label="Featured episode orbit">
-        <div class="orbit orbit-one">
-          <button class="story-orb" type="button" data-episode="7"><img alt=""><span>E.07</span></button>
+        <div class="orbit orbit-one" role="navigation" aria-label="Featured episodes">
           <button class="story-orb" type="button" data-episode="1"><img alt=""><span>E.01</span></button>
-          <button class="story-orb" type="button" data-episode="10"><img alt=""><span>E.10</span></button>
-          <button class="story-orb" type="button" data-episode="4"><img alt=""><span>E.04</span></button>
-          <button class="story-orb" type="button" data-episode="12"><img alt=""><span>E.12</span></button>
           <button class="story-orb" type="button" data-episode="2"><img alt=""><span>E.02</span></button>
-          <button class="story-orb" type="button" data-episode="9"><img alt=""><span>E.09</span></button>
-          <button class="story-orb" type="button" data-episode="5"><img alt=""><span>E.05</span></button>
-          <button class="story-orb" type="button" data-episode="11"><img alt=""><span>E.11</span></button>
           <button class="story-orb" type="button" data-episode="3"><img alt=""><span>E.03</span></button>
-          <button class="story-orb" type="button" data-episode="8"><img alt=""><span>E.08</span></button>
+          <button class="story-orb" type="button" data-episode="4"><img alt=""><span>E.04</span></button>
+          <button class="story-orb" type="button" data-episode="5"><img alt=""><span>E.05</span></button>
           <button class="story-orb" type="button" data-episode="6"><img alt=""><span>E.06</span></button>
+          <button class="story-orb" type="button" data-episode="7"><img alt=""><span>E.07</span></button>
+          <button class="story-orb" type="button" data-episode="8"><img alt=""><span>E.08</span></button>
+          <button class="story-orb" type="button" data-episode="9"><img alt=""><span>E.09</span></button>
+          <button class="story-orb" type="button" data-episode="10"><img alt=""><span>E.10</span></button>
+          <button class="story-orb" type="button" data-episode="11"><img alt=""><span>E.11</span></button>
+          <button class="story-orb" type="button" data-episode="12"><img alt=""><span>E.12</span></button>
         </div>
-        <div class="orbit orbit-two"></div>
-        <div class="dial-center"><strong>SS</strong></div>
+        <div class="dial-center">
+          <button class="dial-center-button" type="button" data-go="episodes" aria-label="Explore the episodes" title="Explore the episodes">
+            <strong>Explore</strong>
+          </button>
+        </div>
       </div>
     </section>
 
