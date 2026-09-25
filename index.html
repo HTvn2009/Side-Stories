@@ -20,8 +20,8 @@
 
     <nav class="tabs" aria-label="Main navigation" role="tablist">
       <button class="tab is-active" id="tab-mainmenu" role="tab" aria-selected="true" aria-controls="mainmenu" data-tab="mainmenu">Main menu</button>
-      <button class="tab" id="tab-author" role="tab" aria-selected="false" aria-controls="author" data-tab="author" tabindex="-1">Author</button>
       <button class="tab" id="tab-episodes" role="tab" aria-selected="false" aria-controls="episodes" data-tab="episodes" tabindex="-1">Episodes</button>
+      <button class="tab" id="tab-author" role="tab" aria-selected="false" aria-controls="author" data-tab="author" tabindex="-1">Author</button>
     </nav>
 
   </header>
@@ -39,7 +39,6 @@ The focus is not only on well-known names or mainstream works. Side Stories is a
 Think of this as a collection of notes, observations, and discoveries. Some entries may be about the making of a project, while others may wander into the ideas, influences, places, people, or seemingly unrelated details that give a work its character. Together, they form a different way of looking at art: not just through what we see, but through the stories and thoughts that exist around it.
 
 Side Stories is ultimately about curiosity—the belief that every creative work has more than one story to tell, and that sometimes the most interesting ones are found just outside the frame.</p>
-        <button class="primary-action" data-go="episodes">Explore the episodes</button>
       </div>
 
       <div class="dial-wrap" aria-label="Featured episode orbit">
@@ -58,7 +57,9 @@ Side Stories is ultimately about curiosity—the belief that every creative work
           <button class="story-orb" type="button" data-episode="6"><img alt=""><span>E.06</span></button>
         </div>
         <div class="orbit orbit-two"></div>
-        <div class="dial-center"><strong>SS</strong></div>
+        <button class="dial-center" type="button" data-go="episodes" aria-label="Explore the episodes">
+          <strong>Explore the<br>Episodes</strong>
+        </button>
       </div>
     </section>
 

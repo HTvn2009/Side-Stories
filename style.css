@@ -32,14 +32,11 @@ main { min-height: calc(100vh - 150px); }
 @keyframes enter { from { opacity: 0; transform: translateY(12px); } }
 .eyebrow { margin: 0 0 22px; font: 500 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; }
 
-.hero { position: relative; display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(330px, .85fr); align-items: center; gap: 5vw; overflow: hidden; }
+.hero { position: relative; display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(330px, .85fr); align-items: start; gap: 5vw; overflow: visible; }
 .hero h1, .section-heading h2 { font-family: var(--display); font-weight: 700; letter-spacing: -.065em; line-height: .92; margin: 0; font-size: clamp(54px, 7.4vw, 116px); }
 h1 em, h2 em { color: var(--coral); font-style: normal; }
 .intro { max-width: 590px; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.65; margin: 32px 0; white-space: pre-line; }
-.primary-action { border: 0; border-radius: 100px; background: var(--coral); padding: 15px 20px 15px 24px; font-weight: 700; cursor: pointer; box-shadow: 5px 5px 0 var(--ink); transition: .2s ease; }
-.primary-action span { display: inline-grid; place-items: center; margin-left: 18px; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: white; }
-.primary-action:hover { transform: translate(2px,2px); box-shadow: 3px 3px 0 var(--ink); }
-.dial-wrap { position: relative; aspect-ratio: 1; width: min(38vw, 520px); justify-self: center; }
+.dial-wrap { position: sticky; top: clamp(28px, 7vh, 72px); aspect-ratio: 1; width: min(38vw, 520px); justify-self: center; }
 .orbit { position: absolute; border-radius: 50%; inset: 0; border: 1px solid var(--blue); }
 .orbit-one { animation: spin 38s linear infinite; }
 .orbit-one::before, .orbit-one::after { content: ""; position: absolute; inset: 11%; border: 1px dashed rgba(23,22,74,.35); border-radius: 50%; }
@@ -66,8 +63,9 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 .story-orb:nth-child(11) { left: 7%; top: 25%; }
 .story-orb:nth-child(12) { left: 25%; top: 7%; }
 .orbit-two { inset: 7%; border: 28px solid var(--mist); box-shadow: inset 0 0 0 1px var(--blue), 0 0 0 1px var(--blue); pointer-events: none; }
-.dial-center { pointer-events: none; position: absolute; inset: 28%; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: var(--blue); color: var(--white); transform: rotate(7deg); box-shadow: 13px 13px 0 var(--coral); }
-.dial-center strong { font: 800 clamp(70px, 9vw, 130px)/.8 var(--display); }
+.dial-center { position: absolute; inset: 28%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8%; border: 0; border-radius: 50%; background: var(--blue); color: var(--white); text-align: center; transform: rotate(7deg); box-shadow: 13px 13px 0 var(--coral); cursor: pointer; transition: background .2s ease, box-shadow .2s ease, scale .2s ease; }
+.dial-center strong { font: 800 clamp(13px, 1.65vw, 23px)/1.05 var(--display); letter-spacing: -.04em; }
+.dial-center:hover { background: var(--ink); box-shadow: 9px 9px 0 var(--coral); scale: 1.04; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes particle-pulse { from { scale: .7; opacity: .55; } to { scale: 1.15; opacity: 1; } }
 
@@ -121,7 +119,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline
 @media (max-width: 800px) {
   .site-header { height: auto; min-height: 126px; grid-template-columns: 1fr auto; gap: 16px; padding-block: 18px; }
   .tabs { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
-  .hero { grid-template-columns: 1fr; }.hero-copy { position: relative; z-index: 1; }.dial-wrap { position: absolute; width: 330px; opacity: .32; right: -110px; bottom: 20px; }
+  .hero { grid-template-columns: 1fr; }.hero-copy { position: relative; z-index: 1; }.dial-wrap { position: absolute; top: auto; width: 330px; opacity: .32; right: -110px; bottom: 20px; }
   .author-grid { grid-template-columns: 1fr; }.portrait { max-width: 400px; width: 85%; }
   .quick-facts { grid-template-columns: 1fr; }
   .episodes-heading { align-items: start; flex-direction: column; }
