@@ -3,13 +3,41 @@ const panels = [...document.querySelectorAll('[role="tabpanel"]')];
 const episodeHeading = document.querySelector('.episodes-heading');
 const episodeList = document.querySelector('.episode-list');
 const articleView = document.querySelector('.article-view');
-const articleKicker = document.querySelector('.article-kicker');
+const articleEpisodeLabel = document.querySelector('.article-episode-label');
+const articleDate = document.querySelector('.article-date');
 const articleTitle = document.querySelector('.article-title');
 const articleBody = document.querySelector('.article-body');
 const previousEpisodeButton = document.querySelector('.previous-episode');
 const nextEpisodeButton = document.querySelector('.next-episode');
 const previousEpisodeTitle = document.querySelector('.previous-episode-title');
 const nextEpisodeTitle = document.querySelector('.next-episode-title');
+const episodeDates = {
+  1: { datetime: '2025-09-14', label: '7 September 2025' },
+  2: { datetime: '2025-10-12', label: '14 October 2025' },
+  3: { datetime: '2025-11-16', label: '20 November 2025' },
+  4: { datetime: '2025-12-14', label: '8 December 2025' },
+  5: { datetime: '2026-01-11', label: '12 January 2026' },
+  6: { datetime: '2026-02-15', label: '1 February 2026' },
+  7: { datetime: '2026-03-15', label: '3 March 2026' },
+  8: { datetime: '2026-04-12', label: '20 April 2026' },
+  9: { datetime: '2026-05-17', label: '28 May 2026' },
+  10: { datetime: '2026-06-14', label: '22 June 2026' },
+  11: { datetime: '2026-07-12', label: '9 July 2026' },
+  12: { datetime: '2026-08-16', label: '5 August 2026' },
+};
+
+document.querySelectorAll('.episode-card').forEach((card) => {
+  const numberElement = card.querySelector('.episode-number');
+  const number = Number(numberElement.textContent.match(/\d+/)?.[0]);
+  const published = episodeDates[number];
+  if (!published) return;
+
+  const date = document.createElement('time');
+  date.className = 'episode-date';
+  date.dateTime = published.datetime;
+  date.textContent = published.label;
+  numberElement.append(date);
+});
 
 function updateEpisodeNavigation(number) {
   const episodes = window.EPISODE_CONTENT || [];
@@ -56,7 +84,9 @@ function showEpisode(number, updateHash = true) {
   updateEpisodeNavigation(number);
 
   if (!episode) {
-    articleKicker.textContent = 'Episode unavailable';
+    articleEpisodeLabel.textContent = 'Episode unavailable';
+    articleDate.textContent = '';
+    articleDate.removeAttribute('datetime');
     articleTitle.textContent = 'This episode could not be loaded.';
     const message = document.createElement('p');
     message.className = 'article-missing';
@@ -65,7 +95,11 @@ function showEpisode(number, updateHash = true) {
     return;
   }
 
-  articleKicker.textContent = `Episode ${String(episode.number).padStart(2, '0')}`;
+  const published = episodeDates[episode.number];
+  articleEpisodeLabel.textContent = `Episode ${String(episode.number).padStart(2, '0')}`;
+  articleDate.textContent = published?.label || '';
+  if (published) articleDate.dateTime = published.datetime;
+  else articleDate.removeAttribute('datetime');
   articleTitle.textContent = episode.title;
 
   for (let index = 0; index < episode.blocks.length; index += 1) {
