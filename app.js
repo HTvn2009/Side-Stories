@@ -30,6 +30,7 @@ document.querySelectorAll('.episode-card').forEach((card) => {
   const numberElement = card.querySelector('.episode-number');
   const number = Number(numberElement.textContent.match(/\d+/)?.[0]);
   const published = episodeDates[number];
+  card.dataset.episode = String(number);
   if (!published) return;
 
   const date = document.createElement('time');
@@ -39,9 +40,17 @@ document.querySelectorAll('.episode-card').forEach((card) => {
   numberElement.append(date);
 });
 
+function getEpisodes() {
+  return Array.isArray(window.EPISODE_CONTENT) ? window.EPISODE_CONTENT : [];
+}
+
+function findEpisode(number) {
+  return getEpisodes().find((item) => Number(item.number) === Number(number));
+}
+
 function updateEpisodeNavigation(number) {
-  const episodes = window.EPISODE_CONTENT || [];
-  const currentIndex = episodes.findIndex((item) => item.number === Number(number));
+  const episodes = getEpisodes();
+  const currentIndex = episodes.findIndex((item) => Number(item.number) === Number(number));
   const previousEpisode = episodes[currentIndex - 1];
   const nextEpisode = episodes[currentIndex + 1];
 
@@ -75,7 +84,7 @@ function activateTab(name, updateHash = true) {
 }
 
 function showEpisode(number, updateHash = true) {
-  const episode = (window.EPISODE_CONTENT || []).find((item) => item.number === Number(number));
+  const episode = findEpisode(number);
   activateTab('episodes', false);
   episodeHeading.hidden = true;
   episodeList.hidden = true;
@@ -187,13 +196,12 @@ document.querySelectorAll('[data-go]').forEach((button) => {
 
 document.querySelectorAll('.read-button').forEach((button) => {
   button.addEventListener('click', () => {
-    const label = button.closest('.episode-card').querySelector('.episode-number').textContent;
-    showEpisode(Number(label.match(/\d+/)?.[0]));
+    showEpisode(button.closest('.episode-card').dataset.episode);
   });
 });
 
 document.querySelectorAll('.story-orb').forEach((orb) => {
-  const episode = (window.EPISODE_CONTENT || []).find((item) => item.number === Number(orb.dataset.episode));
+  const episode = findEpisode(orb.dataset.episode);
   const firstImage = episode?.blocks.find((block) => block.type === 'image');
   const image = orb.querySelector('img');
 
