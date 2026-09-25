@@ -86,8 +86,10 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 .episodes-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
 .episodes-heading > p { max-width: 360px; line-height: 1.6; }
 .episode-list { border-top: 1px solid var(--ink); }
-.episode-card { display: grid; grid-template-columns: 100px 1fr auto; gap: 30px; align-items: center; padding: 25px 10px; border-bottom: 1px solid var(--line); transition: .25s ease; }
+.episode-card { position: relative; display: grid; grid-template-columns: 100px 1fr auto; gap: 30px; align-items: center; padding: 34px 10px 25px; border-bottom: 1px solid var(--line); transition: .25s ease; }
 .episode-card:hover { padding-left: 24px; background: var(--mist); }
+.episode-views { position: absolute; top: 11px; right: 10px; display: inline-flex; align-items: center; gap: 5px; font: 500 10px var(--mono); letter-spacing: .04em; opacity: .64; }
+.episode-views svg, .article-views svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .episode-number, .meta { font: 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .episode-date { display: block; margin-top: 8px; font-size: 9px; line-height: 1.45; letter-spacing: .03em; opacity: .62; }
 .episode-content h3 { margin: 7px 0; font: 700 clamp(21px, 2.4vw, 34px)/1.2 var(--display); letter-spacing: -.03em; }.episode-content > p:last-child { margin: 0; opacity: .7; }
@@ -102,6 +104,8 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 .article-kicker { display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .article-date { opacity: .62; }
 .article-date::before { content: "Published "; }
+.article-views { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; opacity: .62; }
+.article-views[hidden] { display: none; }
 .article-title { margin: 0; font: 700 clamp(42px, 6vw, 78px)/.98 var(--display); letter-spacing: -.055em; }
 .article-body { font-size: clamp(16px, 1.3vw, 19px); line-height: 1.85; }
 .article-body > p { margin: 0 0 1.6em; }

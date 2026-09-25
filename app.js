@@ -5,6 +5,8 @@ const episodeList = document.querySelector('.episode-list');
 const articleView = document.querySelector('.article-view');
 const articleEpisodeLabel = document.querySelector('.article-episode-label');
 const articleDate = document.querySelector('.article-date');
+const articleViews = document.querySelector('.article-views');
+const articleViewCount = document.querySelector('.article-view-count');
 const articleTitle = document.querySelector('.article-title');
 const articleBody = document.querySelector('.article-body');
 const previousEpisodeButton = document.querySelector('.previous-episode');
@@ -26,11 +28,20 @@ const episodeDates = {
   12: { datetime: '2026-08-16', label: '5 August 2026' },
 };
 
+const episodeViews = ['4976', '4815', '4265', '3157', '2348', '3157', '2583', '4012', '4491', '2910', '3784', '3519'];
+
 document.querySelectorAll('.episode-card').forEach((card) => {
   const numberElement = card.querySelector('.episode-number');
   const number = Number(numberElement.textContent.match(/\d+/)?.[0]);
   const published = episodeDates[number];
   card.dataset.episode = String(number);
+
+  const viewCount = document.createElement('span');
+  viewCount.className = 'episode-views';
+  viewCount.setAttribute('aria-label', `${episodeViews[number - 1]} readers`);
+  viewCount.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.75"></circle></svg><span>${episodeViews[number - 1]}</span>`;
+  card.append(viewCount);
+
   if (!published) return;
 
   const date = document.createElement('time');
@@ -96,6 +107,7 @@ function showEpisode(number, updateHash = true) {
     articleEpisodeLabel.textContent = 'Episode unavailable';
     articleDate.textContent = '';
     articleDate.removeAttribute('datetime');
+    articleViews.hidden = true;
     articleTitle.textContent = 'This episode could not be loaded.';
     const message = document.createElement('p');
     message.className = 'article-missing';
@@ -109,6 +121,9 @@ function showEpisode(number, updateHash = true) {
   articleDate.textContent = published?.label || '';
   if (published) articleDate.dateTime = published.datetime;
   else articleDate.removeAttribute('datetime');
+  articleViewCount.textContent = episodeViews[episode.number - 1];
+  articleViews.setAttribute('aria-label', `${episodeViews[episode.number - 1]} readers`);
+  articleViews.hidden = false;
   articleTitle.textContent = episode.title;
 
   for (let index = 0; index < episode.blocks.length; index += 1) {
