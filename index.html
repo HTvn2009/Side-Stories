@@ -176,6 +176,24 @@ Side Stories is ultimately about curiosity—the belief that every creative work
               <span><strong>Next</strong><strong class="next-episode-title"></strong></span>
             </button>
           </nav>
+          <section class="comments" aria-labelledby="comments-title">
+            <div class="comments-heading">
+              <div>
+                <h2 id="comments-title">Comments (<span class="comments-count">0</span>)</h2>
+              </div>
+            </div>
+
+            <form class="comment-composer" aria-label="Write a comment">
+              <span class="comment-avatar comment-avatar-user" aria-hidden="true">
+                <svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="6"></circle><path d="M5.5 29c.7-7 4.2-10.5 10.5-10.5S25.8 22 26.5 29"></path></svg>
+              </span>
+              <div class="comment-field">
+                <textarea id="comment-message" rows="3" placeholder="Add comment..."></textarea>
+              </div>
+            </form>
+
+            <div class="comment-list" aria-live="polite"></div>
+          </section>
         </article>
       </div>
     </section>
